@@ -1,6 +1,6 @@
-export default function BeerCard({ name, image, avgRating}) {
+export default function BeerCard({ name, image, avgRating, setSelectedBeer}) {
   return (
-    <div className="beer-card">
+    <div className="beer-card" onClick={() => {setSelectedBeer(name)}}>
       <div className="beer-image">
         <img src={image} alt={name} 
           onError={(e) => {
@@ -10,7 +10,7 @@ export default function BeerCard({ name, image, avgRating}) {
         />
       </div>
       <h2>{name}</h2>
-      <p style={{ marginTop:0, overflow: "hidden", width: avgRating + "em"}}>✩✩✩✩✩</p>
+      <p style={{ marginTop:0, overflow: "hidden", width: avgRating + "em"}}>★★★★★</p>
     </div>
   )
 }
